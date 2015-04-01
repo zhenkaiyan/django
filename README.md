@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ï»¿<!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -9,7 +9,7 @@
 <br/>
 <p>
 </p>
-	µÚÒ»¸öÍøÕ¾£¬¿ò¼ÜÊÇdjango+bootstrap
+	ç¬¬ä¸€ä¸ªç½‘ç«™ï¼Œæ¡†æ¶æ˜¯django+bootstrap
 </p>
 </body>
 </html>
