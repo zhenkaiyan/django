@@ -1,2 +1,9 @@
-#django</br>    
-第一个网站，框架是django+bootstrap
+<html>
+<p>
+	django
+<br/>
+<p>
+</p>
+	第一个网站，框架是django+bootstrap
+</p>
+</html>
