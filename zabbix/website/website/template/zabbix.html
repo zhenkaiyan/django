@@ -1,0 +1,105 @@
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>zabbix监控</title>
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+    <script src="/static/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/static/js/Chart.js"></script>
+    <style>
+	body{padding-top:50px;background-color:#ffffff;height:100%;overflow:visible}
+	.list-ground{background-color:gray;}
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+	<div class="container">
+	    <div class="navbar-header">
+		<a class="navbar-brand" href="#">
+		    <img alt="平安好医生" src="/static/image/logo.png">
+		</a>
+	    </div>
+	    <div class="collapse navbar-collapse" id="bs-collapse">
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">Link</a></li>
+			<li><a href="#">CPU</a></li>
+			<li><a href="#">MEMORY</a></li>
+		 </ul>
+		<form  class="navbar-form col-md-2 col-md-push-2" role="search">
+		   <div class="form-group">
+		     <input type="text" class="form-control" placeholder="搜索内容">
+		   </div>
+		   <button type="submit" class="btn btn-default btn-success">提交</button>
+		</form>
+		<form class="navbar-form col-md-2 col-md-push-4">
+		    <a class="btn btn-primary btn-info" href="/" role="button">退出</a>
+		</form>
+	    </div>
+	</div>
+    </nav>
+    <div class="container-fluid" style="height:100%">
+	<div class="row" style="height:100%">
+	    <div id="leftdiv" class="left-menu col-md-2 list-ground" style="padding:0px;height:100%">
+			<div class="list-group " style="height:100%;margin-top:0px">
+				<a href="#" class="list-group-item active">整体查看<br/><br/></a>
+				<a href="#" class="list-group-item">系统管理</a>
+				<a href="#" class="list-group-item">主机信息</a>
+				<a href="#" class="list-group-item">网络信息</a>
+				<a href="#" class="list-group-item">磁盘信息</a>
+			</div>
+	    </div>
+	   <div id="rightdiv" class="col-md-10">
+	       <div class="col-sm-7 col-sm-push-2">
+		 <div id="myCarousel" class="carousel slide" data-ride="carousel " data-interval="2000" sytle="height:100px">
+		  <ol class="carousel-indicators">
+		    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		    <li data-target="#myCarousel" data-slide-to="1"></li>
+		  </ol>
+		  <div class="carousel-inner" role="listbox">
+		    <div class="item active">
+		      <img src="/static/image/2.jpg" alt="女神">
+		    </div>
+		    <div class="item">
+		      <img src="/static/image/1.jpg" alt="一元">
+		    </div>
+		  </div>
+		  <!-- Controls -->
+		  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		    <span class="sr-only">Previous</span>
+		  </a>
+		  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		    <span class="sr-only">Next</span>
+		  </a>
+		</div>
+		<div class="dropdown">
+			<button class="btn btn-primary btn-seccuss" style="margin-top:50px">
+				今天凌晨到昨天凌晨的报警事件
+			</button>
+		</div>
+		<div id="barch" style="height:400px;margin-top:50px"></div>
+		<div id="main" style="height:400px;margin-top:50px"></div>
+		</div>
+	   </div>
+	</div>
+    <script>$('#myCarousel').carousel('cycle')</script>
+	<script>
+	var a = {{memory}}
+	var b = {{disk}}
+	var c = {{load}}
+	var d = {{PING}}
+	</script>
+    <script src="http://echarts.baidu.com/build/dist/echarts.js"></script>
+	<script src="/static/js/za.js"></script>
+	<script>
+		$(document).ready(function(){
+			var lefthe = $("#leftdiv").height()
+			var righthe = $("#rightdiv").height()
+			$("#leftdiv").height(righthe)
+		});		
+	</script>
+  </body>
+</html>
