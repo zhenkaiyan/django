@@ -1,4 +1,4 @@
-# django
+# django_zabbix
 这个是zabbix 监控集中展示，初步开始
 登录界面
 ![Aaron Swartz](https://github.com/zhenkaiyan/django/blob/master/zabbix/login.png)
